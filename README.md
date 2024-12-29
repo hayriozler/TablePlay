@@ -1,0 +1,2 @@
+# tableplay
+A fun and interactive online game platform designed for experience and experimentation. TablePlay features classic games like Backgammon and King, providing a nostalgic yet modern gaming experience. Perfect for honing your skills and exploring game development!
