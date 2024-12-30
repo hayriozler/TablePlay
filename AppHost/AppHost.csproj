@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
-    <UserSecretsId>f330c2d8-b607-432a-b463-7685dd67281e</UserSecretsId>
+    <UserSecretsId>93168587-1130-4121-952e-6a3ea98f293e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Server\Server.csproj" />
+    <ProjectReference Include="..\Web.Server\Web.Server.csproj" />
   </ItemGroup>
 
 </Project>

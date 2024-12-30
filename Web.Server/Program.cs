@@ -1,11 +1,9 @@
-using Serilog;
-using Server.Components;
+using Web.UI.Pages;
+using Web.Server.Components;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
-Log.Logger = new LoggerConfiguration()
-            .WriteTo.Console()
-            .CreateLogger();
-Log.Information("Server is starting...");
+
 builder.AddServiceDefaults();
 
 // Add services to the container.
@@ -38,6 +36,6 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(UI._Imports).Assembly);
-Log.Information("Server started...");
+    .AddAdditionalAssemblies(typeof(Web.UI._Imports).Assembly);
+
 app.Run();

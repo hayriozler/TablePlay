@@ -1,12 +1,12 @@
 ﻿using Shared.Lib.Entities;
+using Shared.Lib.Services.Serializer;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
-using System.Text.Json;
 
 namespace Shared.Lib.Services.Http;
 
-public class HttpService(IHttpClientFactory HttpClientFactory) : IHttpService
+public class HttpService(IHttpClientFactory HttpClientFactory, ISerializerService Serializer) : IHttpService
 {
     public async Task Delete(string uri, CancellationToken cancellationToken = default)
     {
@@ -43,11 +43,11 @@ public class HttpService(IHttpClientFactory HttpClientFactory) : IHttpService
         return await SendRequest<T>(request, cancellationToken);
     }
 
-    private static HttpRequestMessage CreateRequest(HttpMethod method, string uri, object value = null)
+    private HttpRequestMessage CreateRequest(HttpMethod method, string uri, object? value = null)
     {
         var request = new HttpRequestMessage(method, uri);
         if (value != null)
-            request.Content = new StringContent(JsonSerializer.Serialize(value), Encoding.UTF8, "application/json");
+            request.Content = new StringContent(Serializer.Serialize(value), Encoding.UTF8, "application/json");
         return request;
     }
 
