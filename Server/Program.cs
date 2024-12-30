@@ -1,6 +1,5 @@
-using UI.Pages;
-using Server.Components;
 using Serilog;
+using Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 Log.Logger = new LoggerConfiguration()
