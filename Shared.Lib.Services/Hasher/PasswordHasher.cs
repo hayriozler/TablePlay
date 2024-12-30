@@ -14,7 +14,6 @@ internal class PasswordHasher : IPasswordHasher
         byte[] hash = Rfc2898DeriveBytes.Pbkdf2(password, salt, ITERATIONS, _algorithm, HASH_SIZE);
         return $"{Convert.ToHexString(hash)}-{Convert.ToHexString(salt)}";
     }
-
     public bool Verify(string password, string passwordHash)
     {
         string[] parts = passwordHash.Split('-');

@@ -14,4 +14,8 @@
 		<ProjectReference Include="..\Shared.Lib.Entities\Shared.Lib.Entities.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Accounts\" />
+	</ItemGroup>
+
 </Project>
